@@ -1,5 +1,5 @@
 stage('Docker Nexus Auth'){
-sh 'echo "gg"'
+echo "gg"
 }
 
 stage('Push Docker Images to Nexus Registry'){
