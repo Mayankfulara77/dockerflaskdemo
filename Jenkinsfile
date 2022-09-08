@@ -1,5 +1,5 @@
 stage('Docker Nexus Auth'){
-sh 'docker login -u admin -p admin 54.211.71.95:8081'
+sh 'docker login -u admin -p 123 44.201.118.101:8081'
 }
 
 stage('Push Docker Images to Nexus Registry'){
