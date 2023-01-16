@@ -1,7 +1,6 @@
 pipeline{
     agent any
     tools {
-        terraform 'terraform'
         git 'Default'
     }
     stages {
@@ -10,13 +9,15 @@ pipeline{
                 git branch: 'main', credentialsId: 'Github', url: 'https://github.com/Mayankfulara77/dockerflaskdemo.git'
             }
         }
+    }
 
-stage('Build ImG From Docker file'){
-    sh 'docker build -t name DockerDemoImg'
-}
-stage('Creating Container'){
-    sh 'docker run -it -p 9090:9090 -d --name MyWorkCont'
-}
-stage('Working'){
-    sh 'echo "done"'
+    stage('Build ImG From Docker file'){
+        sh 'docker build -t name DockerDemoImg'
+    }
+    stage('Creating Container'){
+        sh 'docker run -it -p 9090:9090 -d --name MyWorkCont'
+    }
+    stage('Working'){
+        sh 'echo "done"'
+    }
 }
