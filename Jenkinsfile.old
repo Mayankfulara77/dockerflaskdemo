@@ -9,7 +9,6 @@ pipeline{
                 git branch: 'main', credentialsId: 'Github', url: 'https://github.com/Mayankfulara77/dockerflaskdemo.git'
             }
         }
-    }
 
         stage('Build ImG From Docker file'){
             sh 'docker build -t name DockerDemoImg'
@@ -20,4 +19,5 @@ pipeline{
         stage('Working'){
             sh 'echo "done"'
         }
+    }
 }
