@@ -3,7 +3,8 @@ stages{
       steps{
          checkout([$class: 'GitSCM', branches: [[name: '**']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/Mayankfulara77/dockerflaskdemo.git']]])
       }
-    }
+}
+}
 stage('Build ImG From Docker file'){
     sh 'docker build -t name DockerDemoImg'
 }
