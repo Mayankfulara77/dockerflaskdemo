@@ -1,9 +1,9 @@
 stage('Build ImG From Docker file'){
-    sh 'docker build -t name .'
+    sh 'docker build -t name DockerDemoImg'
 }
-stage('Push Docker Images to Nexus Registry'){
-    sh 'docker push http://44.201.118.101:8081/repository/demorep/'
+stage('Creating Container'){
+    sh 'docker run -it -p 9090:9090 -d --name MyWorkCont'
 }
-stage('Docker Nexus Auth'){
-    sh 'docker login -u admin -p admin http://44.201.118.101:9001/'
+stage('Working'){
+    sh 'echo "done"'
 }
