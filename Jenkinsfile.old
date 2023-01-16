@@ -16,10 +16,16 @@ pipeline{
             }
         }
         stage('Creating Container'){
-            sh 'docker run -it -p 9090:9090 -d --name MyWorkCont DockerDemoImg'
+            steps{
+                sh 'docker run -it -p 9090:9090 -d --name MyWorkCont DockerDemoImg'
+            }
+            
         }
         stage('Working'){
-            sh 'echo "done"'
+            steps{
+                sh 'echo "done"'
+            }
+            
         }
     }
 }
