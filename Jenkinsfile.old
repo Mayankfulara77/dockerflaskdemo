@@ -11,10 +11,12 @@ pipeline{
         }
 
         stage('Build ImG From Docker file'){
-            sh 'docker build -t name DockerDemoImg'
+            steps{
+                sh 'docker build -t name DockerDemoImg'
+            }
         }
         stage('Creating Container'){
-            sh 'docker run -it -p 9090:9090 -d --name MyWorkCont'
+            sh 'docker run -it -p 9090:9090 -d --name MyWorkCont DockerDemoImg'
         }
         stage('Working'){
             sh 'echo "done"'
