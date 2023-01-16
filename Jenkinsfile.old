@@ -12,7 +12,7 @@ pipeline{
 
         stage('Build ImG From Docker file'){
             steps{
-                sh 'docker build -t name DockerDemoImg'
+                sh 'docker build -t DockerDemoImg .'
             }
         }
         stage('Creating Container'){
